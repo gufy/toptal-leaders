@@ -1,0 +1,57 @@
+@mixin button-variant-gradiant($color, $background-start, $background-end, $border) {
+  $active-background-start: darken($background-start, 10%);
+  $active-background-end: darken($background-end, 10%);
+  $active-border: darken($border, 12%);
+
+  color: $color;
+  @include gradient-vertical($background-start, $background-end);
+
+  border-color: $border;
+  @include box-shadow(inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075));
+
+  @include hover {
+    color: $color;
+    @include gradient-vertical($active-background-start, $active-background-end);
+    border-color: $active-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: $color;
+    @include gradient-vertical($active-background-start, $active-background-end);
+    border-color: $active-border;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    @include gradient-vertical($active-background-start, $active-background-end);
+    border-color: $active-border;
+    // Remove the gradient for the pressed/active state
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+
+      @include gradient-vertical(darken($background-start, 17%), darken($background-end, 17%));
+      border-color: darken($border, 25%);
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      @include gradient-vertical($background-start, $background-end);
+      border-color: $border;
+    }
+    @include hover {
+      @include gradient-vertical($background-start, $background-end);
+      border-color: $border;
+    }
+  }
+}
