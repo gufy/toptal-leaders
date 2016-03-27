@@ -80,6 +80,7 @@
   @extend .clearfix;
   background-color: $grayColor;
   padding: 17px 2px 12px;
+  margin-bottom: 3em;
 
   ul {
     list-style: none;
@@ -95,10 +96,15 @@
       padding-right: 12px;
       padding-left: 12px;
       border-left: 1px solid #e5e5e5;
+      line-height: 1.5em;
 
       &:first-of-type {
         border: 0;
       }
     }
+  }
+
+  .right {
+    line-height: 1.1em
   }
 }

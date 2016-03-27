@@ -1,6 +1,12 @@
+@import "variables";
+
 @import "../../bower_components/bootstrap/scss/bootstrap";
+@import "font-awesome/font-awesome";
 
 @import "mixins";
 @import "colors";
 @import "buttons";
+@import "forms";
 @import "header";
+@import "content";
+@import "footer";

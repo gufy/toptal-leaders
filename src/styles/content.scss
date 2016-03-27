@@ -1,0 +1,134 @@
+.content {
+  @extend .clearfix;
+
+  margin-top: 1em;
+
+  h1 {
+    text-align: center;
+    color: #3b67a7;
+    font-size: (45em/16);
+    font-weight: 400;
+  }
+
+  p {
+    color: #a0a0a0;
+    font-size: (15em/16);
+    font-weight: 300;
+  }
+
+  .images {
+    margin: 2em 0;
+    height: 135px;
+    position: relative;
+    background-image: url(../img/export_leaders.png);
+    background-repeat: repeat-x;
+    background-position: top center;
+  }
+
+  .section-headline {
+    text-align: center;
+    h2 {
+      font-size: (18em/16);
+      color: #484848;
+      font-weight: 300;
+      text-align: center;
+      margin: 2em auto;
+      border-bottom: 1px solid #484848;
+      display: inline-block;
+    }
+  }
+
+  .reason {
+
+    .reason-image {
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 143px;
+      height: 127px;
+      margin: 0 auto;
+    }
+    .reason-label {
+      text-align: justify;
+    }
+    hr {
+      border: 4px solid #d4d4d4;
+      margin: 26px 10px;
+    }
+
+    &.reason-1 {
+      .reason-image {
+        background-image: url(../img/flag.png);
+      }
+    }
+    &.reason-2 {
+      .reason-image {
+        background-image: url(../img/rocket.png);
+      }
+    }
+    &.reason-3 {
+      .reason-image {
+        background-image: url(../img/spaceman.png);
+      }
+    }
+  }
+
+  .developer {
+    .developer-image {
+      @include border-radius(2px);
+
+      background-image: url(../img/profile-picture.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 124px;
+      height: 124px;
+      margin: 0.5em auto;
+    }
+
+    .developer-name {
+      color: #1d5287;
+      font-size: (14.77em/16);
+      text-align: center;
+      font-weight: 300;
+    }
+
+    .developer-country {
+      color: #a0a0a0;
+      font-size: (12.66em/16);
+      text-align: center;
+      font-weight: 300;
+    }
+  }
+
+  .profiles {
+    margin: 0 5%;
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+    }
+
+    li {
+      float: left;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0;
+      font-size: (13em/16);
+      list-style-position: inside;
+
+      a {
+        margin-left: 0.1em;
+        color: #7c7c7c;
+      }
+
+      @include media-breakpoint-up(sm) {
+        width: 50%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 25%;
+      }
+
+    }
+  }
+}

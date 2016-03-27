@@ -1,0 +1,15 @@
+.footer {
+  background-color: #3b67a7;
+  color: white;
+  padding: 70px 15px 75px;
+  margin-top: 2em;
+
+  p {
+    float: left;
+
+    &.right {
+      display: block;
+      float: right;
+    }
+  }
+}

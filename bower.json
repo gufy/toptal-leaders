@@ -1,0 +1,21 @@
+{
+  "name": "toptal-leaders",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Vojta Kopal <vojtech.kopal@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2"
+  }
+}

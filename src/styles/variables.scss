@@ -1,0 +1,16 @@
+$container-max-widths: (
+        sm: 576px,
+        md: 720px,
+        lg: 810px,
+        xl: 810px
+) !default;
+
+$grid-columns: 30 !default;
+
+$input-bg: #fafafa;
+$input-border-color: #eeeeee;
+$input-color-placeholder: #b8b8b8;
+$input-padding-y: 1rem;
+$input-padding-x: 2.5rem;
+
+$fa-font-path: "../fonts" !default;
