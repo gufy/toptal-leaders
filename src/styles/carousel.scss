@@ -1,0 +1,89 @@
+.carousel {
+  @include gradient-vertical(#ffffff, #f2f2f2);
+
+  margin: 2em 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow: hidden;
+  position: relative;
+
+  h2.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 330px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+    font-weight: 300;
+    z-index: 1;
+    font-size: (39em/16);
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  .carousel-content {
+    height: 315px;
+    width: 3000px;
+
+    .carousel-box {
+      height: 100%;
+      float: left;
+      margin-right: 3px;
+
+      &.carousel-box-big {
+        width: 500px;
+      }
+
+      &.carousel-box-composed {
+        width: 283px;
+
+        .element {
+
+          &.top {
+            height: 145px;
+            margin-bottom: 3px;
+          }
+
+          &.bottom {
+            height: 167px;
+          }
+
+          &.half {
+            width: 140px;
+            float: left;
+          }
+
+          & > div {
+            &:first-of-type {
+              &.half {
+                margin-right: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sample {
+      @include border-radius(4px);
+      background-color: black;
+      position: relative;
+
+      .img {
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/photo.jpg);
+        background-position: center center;
+      }
+    }
+
+  }
+}
