@@ -28,6 +28,7 @@
   .carousel-content {
     height: 315px;
     width: 3000px;
+    position: relative;
 
     .carousel-box {
       height: 100%;
@@ -72,6 +73,7 @@
       @include border-radius(4px);
       background-color: black;
       position: relative;
+      overflow: hidden;
 
       .img {
         opacity: 0.5;

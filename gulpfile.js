@@ -11,6 +11,7 @@ var gulp = require('gulp'),
   cache = require('gulp-cache'),
   livereload = require('gulp-livereload'),
   del = require('del'),
+  mainBowerFiles = require('main-bower-files'),
   browserSync = require('browser-sync').create(),
   useref = require('gulp-useref');
 
@@ -34,9 +35,9 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('src/scripts/**/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
+  return gulp.src(['bower_components/jquery/dist/jquery.js','src/scripts/**/*.js'])
+    //.pipe(jshint('.jshintrc'))
+    //.pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/assets/js'))
     .pipe(rename({suffix: '.min'}))
@@ -75,5 +76,5 @@ gulp.task('watch', ['browserSync'], function (){
   gulp.watch('src/styles/**/*.scss', ['styles']);
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('src/*.html', ['useref', browserSync.reload]);
-  gulp.watch('src/scripts/**/*.js', browserSync.reload);
+  gulp.watch('src/scripts/**/*.js', ['scripts', browserSync.reload]);
 });
