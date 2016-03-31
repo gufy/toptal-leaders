@@ -45,7 +45,7 @@
       .map(function (x) { return $(x).width() + parseInt($(x).css('marginRight')) + parseInt($(x).css('marginLeft')); })
       .reduce(function(a,x){return a+x},0);
 
-    var ratio = Math.ceil(3 * window.innerWidth / contentWidth);
+    var ratio = Math.max(2, Math.ceil(3 * window.innerWidth / contentWidth));
 
     $container.width(contentWidth);
 
@@ -95,6 +95,21 @@
 
     $('.content .images').slidingPhotos();
     $('.carousel').carousel();
+    $('.btn-menu').each(function () {
+      var $this = $(this);
+      var $target = $("."+$this.attr('rel'));
+
+      $this.on('click', function (ev) {
+        ev.preventDefault();
+        $target.toggleClass('open');
+
+        if ($target.hasClass('open')) {
+          $this.addClass('open');
+        } else {
+          $this.removeClass('open');
+        }
+      });
+    })
 
   });
 

@@ -20,3 +20,9 @@
   text-shadow: 0 0 transparent;
   font-weight: 300;
 }
+
+@mixin btn-open {
+  -moz-box-shadow:    inset 0 0 1px rgba(0,0,0,0.22);
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.22);
+  box-shadow:         inset 0 0 1px rgba(0,0,0,0.22);
+}

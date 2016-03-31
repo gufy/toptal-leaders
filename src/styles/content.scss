@@ -8,6 +8,10 @@
     color: #3b67a7;
     font-size: (45em/16);
     font-weight: 400;
+
+    @include media-breakpoint-down(sm) {
+      font-size: (30em/16);
+    }
   }
 
   p {

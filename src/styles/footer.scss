@@ -1,15 +1,35 @@
 .footer {
+  @include clearfix;
+
   background-color: #3b67a7;
   color: white;
-  padding: 70px 15px 75px;
+  padding: 70px 15px 70px;
   margin-top: 2em;
+
+  @media( max-width: 880px) {
+    text-align: center;
+    padding: 2em 15px 1.5em;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 75%;
+    padding: 2em 15px 1.5em;
+  }
 
   p {
     float: left;
 
+    @media( max-width: 880px) {
+      float: none;
+    }
+
     &.right {
       display: block;
       float: right;
+
+      @media( max-width: 880px) {
+        float: none;
+      }
     }
   }
 }

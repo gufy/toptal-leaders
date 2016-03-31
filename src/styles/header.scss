@@ -25,6 +25,12 @@
     margin-bottom: 6px;
     margin-left: 6px;
 
+    @include media-breakpoint-down(sm) {
+      width: 64px;
+      height: 32px;
+      margin-top: 8px;
+    }
+
     .logo {
       position: absolute;
       top: 0;
@@ -32,6 +38,7 @@
       width: 100%;
       height: 100%;
       background-image: url(../img/toptal-logo.png);
+      background-size: contain;
     }
   }
 
@@ -43,10 +50,18 @@
     text-transform: uppercase;
     font-weight: 600;
 
+    @include media-breakpoint-down(sm) {
+      line-height: 45px;
+    }
+
     li {
       float: left;
       margin: 0;
       padding: 0;
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
 
       a {
         margin-left: 3px;
@@ -66,6 +81,18 @@
       .link-join-toptal {
         color: #525252;
       }
+
+      &.menu {
+        display: none;
+
+        @include media-breakpoint-down(sm) {
+          display: block;
+
+          .btn-menu.open {
+            @include btn-open();
+          }
+        }
+      }
     }
   }
 
@@ -81,6 +108,10 @@
   background-color: $grayColor;
   padding: 17px 2px 12px;
   margin-bottom: 3em;
+
+  @include media-breakpoint-down(md) {
+    font-size: 80%;
+  }
 
   ul {
     list-style: none;
@@ -98,6 +129,10 @@
       border-left: 1px solid #e5e5e5;
       line-height: 1.5em;
 
+      a {
+        color: #a9a9a9;
+      }
+
       &:first-of-type {
         border: 0;
       }
@@ -106,5 +141,28 @@
 
   .right {
     line-height: 1.1em
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    display: none;
+    font-size: 100%;
+
+    &.open {
+      display: block;
+    }
+
+    ul {
+
+      li {
+        float: none;
+        text-align: center;
+        padding: 0.5em;
+      }
+    }
+
+    .right {
+      display: none;
+    }
   }
 }
