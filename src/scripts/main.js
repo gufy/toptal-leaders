@@ -97,7 +97,7 @@
     $('.carousel').carousel();
     $('.btn-menu').each(function () {
       var $this = $(this);
-      var $target = $("."+$this.attr('rel'));
+      var $target = $("."+$this.attr('data-target'));
 
       $this.on('click', function (ev) {
         ev.preventDefault();
